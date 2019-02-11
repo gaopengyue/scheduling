@@ -1,1 +1,27 @@
-/* miniprogram/pages/scheduling/scheduling.wxss */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.date {
+  margin-bottom: 20rpx;
+}
+.item {
+  width: 107rpx;
+  font-size: 24rpx;
+  border-right: 1rpx solid #e6545f;
+  border-top: 1rpx solid #e6545f;
+  box-sizing: border-box;
+}
+
+.date-item {
+  border-bottom: 1rpx solid #e6545f;
+}
+.kind-item {
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #e6545f;
+}
+.kind-item.on {
+  color: #fff;
+  background-color: #ea7274;
+}

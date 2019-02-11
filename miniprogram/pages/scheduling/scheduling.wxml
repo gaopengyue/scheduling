@@ -1,16 +1,24 @@
-<!--miniprogram/pages/scheduling/scheduling.wxml-->
-<text>miniprogram/pages/scheduling/scheduling.wxml</text>
-<picker
-  mode="date"
-  value="{{bDate}}"
-  bindchange="bindDateChangeBegin"
->
+<picker mode="date" value="{{bDate}}" bindchange="bindDateChangeBegin">
   <view class="picker">开始日期: {{bDate}}</view>
 </picker>
-<picker
-  mode="date"
-  value="{{eDate}}"
-  bindchange="bindDateChangeEnd"
->
+<picker mode="date" value="{{eDate}}" bindchange="bindDateChangeEnd">
   <view class="picker">结束日期: {{eDate}}</view>
 </picker>
+<view class="list">
+  <view class="item week" wx:for="{{week}}" wx:key="{{index}}">周{{item}}</view>
+  <view class="item date" wx:for="{{list}}" wx:key="{{index}}" wx:for-item="date">
+    <!-- <view wx:if="{{index < 7}}">{{date.week}}</view> -->
+    <view class="date-item">{{date.date}}</view>
+    <view wx:if="{{!date.hide}}">
+      <view 
+        wx:for="{{date.kind}}" 
+        wx:key="{{index}}"
+        class="kind-item {{item.active ? 'on' : ''}}" 
+        data-kind="{{item.name}}" 
+        data-date="{{date.dateF}}" 
+        bindtap="kindTap">{{item.name}}</view>
+    </view>
+    
+  </view>
+
+</view>
