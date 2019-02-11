@@ -1,0 +1,16 @@
+<!--miniprogram/pages/scheduling/scheduling.wxml-->
+<text>miniprogram/pages/scheduling/scheduling.wxml</text>
+<picker
+  mode="date"
+  value="{{bDate}}"
+  bindchange="bindDateChangeBegin"
+>
+  <view class="picker">开始日期: {{bDate}}</view>
+</picker>
+<picker
+  mode="date"
+  value="{{eDate}}"
+  bindchange="bindDateChangeEnd"
+>
+  <view class="picker">结束日期: {{eDate}}</view>
+</picker>
