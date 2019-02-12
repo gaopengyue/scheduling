@@ -1,0 +1,17 @@
+<view class="home">
+  <view class="logo">
+    <image src="/images/logo.jpg" mode="aspectFit"></image>
+  </view>
+  <view class="list">
+
+  </view>
+  <view class="btm">
+    <button
+      wx:if="{{!userInfo}}"
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="login">新增</button>
+  <navigator wx:else class="add" url="/pages/scheduling/scheduling">新增</navigator>
+  </view>
+  
+</view>

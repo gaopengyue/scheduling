@@ -18,7 +18,6 @@
         data-date="{{date.dateF}}" 
         bindtap="kindTap">{{item.name}}</view>
     </view>
-    
   </view>
-
+  <view bindtap="submit">提交</view>
 </view>

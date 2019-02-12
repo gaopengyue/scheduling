@@ -1,4 +1,7 @@
 import moment from '../../utils/moment.min.js'
+const app = getApp()
+const db = wx.cloud.database()
+
 Page({
   data: {
     bDate: '',
@@ -60,7 +63,7 @@ Page({
 
     }
     let week = res[0].week
-    console.log(res[0].week)
+    // console.log(res[0].week)
     if(week != 1) {
       week = week == 0 ? 7 : week;
       for(let i = 1; i < week; i++) {
@@ -72,7 +75,7 @@ Page({
         })
       }
     }
-    this.setData({list: res})
+    this.setData({list: res, result: {}})
   },
   kindTap(e) {
     let date = e.target.dataset.date
@@ -95,6 +98,24 @@ Page({
     this.setData({ 
       result: this.data.result,
       list: this.data.list,
+    })
+  },
+  submit() {
+    
+    db.collection('schedules').add({
+      data: {
+        data: this.data.result,
+        userInfo: app.globalData.userInfo
+      },
+      success: res => {
+        wx.showToast({ title: '新增排班表成功'})
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '新增记录失败'
+        })
+      }
     })
   }
 
