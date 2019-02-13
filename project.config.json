@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -40,6 +40,14 @@
 					"id": -1,
 					"name": "paiban",
 					"pathName": "pages/scheduling/scheduling",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "详情页",
+					"pathName": "pages/detail/detail",
+					"query": "id=oa9n60JSZTSzHciY6whzRijtlvnM-schedules",
 					"scene": null
 				}
 			]

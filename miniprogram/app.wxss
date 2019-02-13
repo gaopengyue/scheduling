@@ -5,3 +5,13 @@
   align-items: center;
   box-sizing: border-box;
 } 
+.submit {
+  width: 620rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background: #ea7274;
+  border-radius: 100rpx;
+  margin: 30rpx auto;
+}

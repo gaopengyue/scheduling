@@ -1,27 +1,88 @@
+page {
+  padding-bottom: 30rpx;
+}
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+.picker {
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: bold;
+  padding: 18rpx 28rpx;
+  color: #fff;
+  background: #ea7274;
+  
+}
+.picker picker view {
+  /* background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAAAXNSR0IArs4c6QAAAUVJREFUaAXtlTFug0AQRUlowxVsJXeAArmg9YlTGkWuuESkXAE3FKDslxxptbKdkJmNU7yVsGC9/Jn38OKiYGAAAxjAAAYwgAEMYAADGMAABjCAAQxgAAP/1UDXdU9t2269+lOWMq15j5YANTCO4+s0TW91Xb9YsnSvMpSlTCucCSwC2SzLcrDA6V5lhMxNlPvrUxNY3/enqqr2ofpRDamxpmme13aTQB2Vqey1OfF6E5iCUrh5nvs1cFobPSkXKPX1oA+P8bXfQtYuHB9lWXbDMLzfyhaURIQ1+vm5QammG5jC1sDlhHIH+ylcbqgsYN/B/QVUNrBrcJrPtaeUHQ/XPRYH6zzdc+fv3V8UaV1dZwVTgQROU65vPwVeGtnBVDSCKzz+fC+B3G1OcDru1gCFMYABDGAAAxjAAAYwgAEMYAADFgOfDWG0oyHANvEAAAAASUVORK5CYII=) no-repeat center right;
+  background-size: 54rpx; */
+  padding: 5rpx 28rpx;
+  border: 1rpx solid #efefef;
+  border-radius: 100rpx;
+}
+.picker > view {
+  padding: 0 10rpx;
+  font-weight: normal;
+}
+.week {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 30rpx 0;
+  background: #fff;
+  box-shadow: 0 8rpx 10rpx 0 rgba(0,0,0,0.02);
+}
+.week view {
+  width: 14.2857%;
+  font-size: 28rpx;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-}
-.date {
-  margin-bottom: 20rpx;
+  border-top: 1rpx solid #efefef;
 }
 .item {
-  width: 107rpx;
+  width: 14.2857%;
   font-size: 24rpx;
-  border-right: 1rpx solid #e6545f;
-  border-top: 1rpx solid #e6545f;
+  border-right: 1rpx solid #efefef;
+  border-bottom: 2rpx solid #efefef;
   box-sizing: border-box;
 }
 
 .date-item {
-  border-bottom: 1rpx solid #e6545f;
+  color: #666;
+  padding: 10rpx 0;
+  /* border-bottom: 1rpx solid #efefef; */
 }
 .kind-item {
-  padding: 10rpx 0;
-  border-bottom: 1rpx solid #e6545f;
+  font-size: 28rpx;
+  color: #333;
+  padding: 8rpx 0;
+  text-align: left;
+  position: relative;
+  padding-left: 36rpx;
+}
+.kind-item:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10rpx;
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1rpx solid #dfdfdf;
+  transform: translateY(-50%);
 }
 .kind-item.on {
-  color: #fff;
+  color: #e6545f;
+}
+.kind-item.on:after {
+  border-color: #e6545f;
   background-color: #ea7274;
 }

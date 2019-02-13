@@ -2,12 +2,15 @@
   <view class="logo">
     <image src="/images/logo.jpg" mode="aspectFit"></image>
   </view>
-  <view class="list">
-    <view>{{queryResult}}</view>
+  <view class="list" wx:if="{{queryResult && queryResult.length}}">
+    <navigator wx:for="{{queryResult}}" wx:key="{{index}}" url="/pages/detail/detail?id={{item._id}}">
+      <image src="{{item.userInfo.avatarUrl}}"></image>
+      <view>{{item.userInfo.nickName}}</view>
+    </navigator>
   </view>
+  <view wx:else>暂无数据</view>
   <view class="btm">
-    <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="login">新增</button>
-    <view wx:else class="add" bindtap="onGetOpenid">新增</view>
+    <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="submit">去排班</button>
+    <view wx:else class="submit" bindtap="onGetOpenid">去排班</view>
   </view>
-  
 </view>

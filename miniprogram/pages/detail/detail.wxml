@@ -1,0 +1,17 @@
+<view class="detail" wx:if="{{userInfo}}">
+  <view class="userinfo">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <view>{{userInfo.nickName}}</view>
+    <view>{{thisMonth}}</view>
+  </view>
+  <view class="week">
+    <view wx:for="{{week}}" wx:key="{{index}}">周{{item}}</view>
+  </view>
+  <view class="list">
+    <view class="item {{item.kind ? '' : 'empty'}}" wx:for="{{result}}" wx:key="{{index}}">
+      <!-- <view>{{item.week}}</view> -->
+      <view>{{item.date}}</view>
+      <view class="{{item.kind == '休' ? 'red' : ''}}">{{item.kind}}</view>
+    </view>
+  </view>
+</view>

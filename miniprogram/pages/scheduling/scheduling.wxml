@@ -1,23 +1,33 @@
-<picker mode="date" value="{{bDate}}" bindchange="bindDateChangeBegin">
-  <view class="picker">开始日期: {{bDate}}</view>
-</picker>
-<picker mode="date" value="{{eDate}}" bindchange="bindDateChangeEnd">
-  <view class="picker">结束日期: {{eDate}}</view>
-</picker>
-<view class="list">
-  <view class="item week" wx:for="{{week}}" wx:key="{{index}}">周{{item}}</view>
-  <view class="item date" wx:for="{{list}}" wx:key="{{index}}" wx:for-item="date">
-    <!-- <view wx:if="{{index < 7}}">{{date.week}}</view> -->
-    <view class="date-item">{{date.date}}</view>
-    <view wx:if="{{!date.hide}}">
-      <view 
-        wx:for="{{date.kind}}" 
-        wx:key="{{index}}"
-        class="kind-item {{item.active ? 'on' : ''}}" 
-        data-kind="{{item.name}}" 
-        data-date="{{date.dateF}}" 
-        bindtap="kindTap">{{item.name}}</view>
+<view>
+  <view class="top">
+    <view class="picker">
+      <picker mode="date" value="{{bDate}}" bindchange="bindDateChangeBegin">
+        <view class="picker-text">{{bDateStr}}</view>
+      </picker>
+      <view>-</view>
+      <picker mode="date" value="{{eDate}}" bindchange="bindDateChangeEnd">
+        <view class="picker-text">{{eDateStr}}</view>
+      </picker>
+    </view>
+    <view class="week">
+      <view wx:for="{{week}}" wx:key="{{index}}">周{{item}}</view>
     </view>
   </view>
-  <view bindtap="submit">提交</view>
+  
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="{{index}}" wx:for-item="date">
+      <!-- <view wx:if="{{index < 7}}">{{date.week}}</view> -->
+      <view class="date-item">{{date.date}}</view>
+      <view wx:if="{{!date.hide}}">
+        <view 
+          wx:for="{{date.kind}}" 
+          wx:key="{{index}}"
+          class="kind-item {{item.active ? 'on' : ''}}" 
+          data-kind="{{item.name}}" 
+          data-date="{{date.dateF}}" 
+          bindtap="kindTap">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="submit" bindtap="submit">提交</view>
+  </view>
 </view>

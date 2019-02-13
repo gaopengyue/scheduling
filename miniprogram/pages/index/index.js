@@ -27,29 +27,41 @@ Page({
   },
   onQuery () {
     // 查询所有记录
-    db.collection('schedules').get({
+    db.collection('schedules').limit(100).get({
       success: res => {
         this.setData({
-          queryResult: JSON.stringify(res.data, null, 2)
+          queryResult: res.data
         })
-        console.log('[数据库] [查询记录] 成功: ', res)
       },
       fail: err => {
         wx.showToast({
           icon: 'none',
           title: '查询记录失败'
         })
-        console.error('[数据库] [查询记录] 失败：', err)
       }
     })
   },
   onGetUserInfo (e) {
     if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo
       this.setData({ userInfo: e.detail.userInfo })
+      this.onGetOpenid()
     }
   },
-  onGetOpenid: function() {
+  onGetOpenid () {
     if(app.globalData.openid) {
+      wx.navigateTo({ url: '/pages/scheduling/scheduling' })
+      return
+    }
+    //
+    let openid;
+    try {
+      openid = wx.getStorageSync('scheduleOpenId')
+    } catch(e) {
+      console.log(e)
+    }
+    if(openid) {
+      app.globalData.openid = openid
       wx.navigateTo({ url: '/pages/scheduling/scheduling' })
       return
     }
@@ -60,6 +72,10 @@ Page({
       data: {},
       success: res => {
         wx.hideLoading()
+        wx.setStorage({ // openid存在本地
+          key: 'scheduleOpenId',
+          data: res.result.openid
+        })
         app.globalData.openid = res.result.openid
         wx.navigateTo({ url: '/pages/scheduling/scheduling' })
       }

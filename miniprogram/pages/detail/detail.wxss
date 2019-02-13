@@ -1,0 +1,59 @@
+/* miniprogram/pages/detail/detail.wxss */
+.userinfo {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 28rpx;
+}
+.userinfo image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  border: 2rpx solid #efefef;
+}
+.userinfo view:last-child {
+  padding-left: 28rpx;
+}
+.list, .week {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.list {
+  border-top: 1rpx solid #efefef;
+}
+.list .item { 
+  width: 14.2857%;
+  font-size: 28rpx;
+  border-right: 1rpx solid #efefef;
+  border-bottom: 1rpx solid #efefef;
+  box-sizing: border-box;
+}
+.list .item:nth-child(7n+7) {
+  border-right: 0;
+}
+.list .item view:first-child {
+  color: #666;
+  padding-top: 10rpx;
+}
+.list .item view:last-child {
+  font-size: 30rpx;
+  padding: 18rpx;
+  font-weight: bold;
+  color: #333;
+}
+.list .item view:last-child.red {
+  color: #e6545f;
+}
+.list .item.empty view:first-child {
+  color: #ccc;
+}
+.week {
+  padding: 50rpx 0 30rpx;
+}
+.week view {
+  width: 14.2857%;
+  font-size: 28rpx;
+}
+
