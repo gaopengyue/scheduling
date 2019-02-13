@@ -148,7 +148,7 @@ Page({
       success: res => {
         wx.showToast({ title: '排班成功'})
         setTimeout(() => {
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/detail/detail?id=' + id
           })
         }, 1000)
@@ -162,14 +162,15 @@ Page({
     })
   },
   upDateSchedule(id) {
+    const _ = db.command
     db.collection('schedules').doc(id).update({
       data: {
-        data: this.data.result,
+        data: _.set(this.data.result)
       },
       success: res => {
         wx.showToast({ title: '更新排班表成功'})
         setTimeout(() => {
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/detail/detail?id=' + id
           })
         }, 1000)

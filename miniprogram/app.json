@@ -2,19 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/scheduling/scheduling",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
     "pages/detail/detail"
   ],
   "window": {
     "backgroundColor": "#fff",
-    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "你好，骨康",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   }
 }

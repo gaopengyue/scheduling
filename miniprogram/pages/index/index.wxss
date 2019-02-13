@@ -4,13 +4,14 @@ page {
 }
 .logo {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
 }
 .logo image {
   display: block;
-  width: 100%;
-  height: 82rpx;
-  margin-top: -2rpx;
+  width: 130rpx;
+  height: 130rpx;
+  padding-right: 10rpx;
 }
 
 .list {
@@ -31,6 +32,22 @@ page {
   border-radius: 50%;
   margin-right: 24rpx;
   border: 2rpx solid #efefef;
+}
+.empty {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666;
+  font-size: 30rpx;
+  height: 700rpx;
+}
+.empty image {
+  width: 100rpx;
+  height: 100rpx;
+  opacity: .5;
+  padding-bottom: 51rpx;
 }
 .btm {
   position: fixed;

@@ -11,17 +11,20 @@ page {
   align-items: center;
   font-size: 36rpx;
   font-weight: bold;
-  padding: 18rpx 28rpx;
-  color: #fff;
-  background: #ea7274;
+  color: #333;
+  background: #fff;
+  padding-bottom: 20rpx;
+  /* padding: 18rpx 28rpx; */
+  /* color: #fff; */
+  /* background: #ea7274; */
   
 }
 .picker picker view {
-  /* background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAAAXNSR0IArs4c6QAAAUVJREFUaAXtlTFug0AQRUlowxVsJXeAArmg9YlTGkWuuESkXAE3FKDslxxptbKdkJmNU7yVsGC9/Jn38OKiYGAAAxjAAAYwgAEMYAADGMAABjCAAQxgAAP/1UDXdU9t2269+lOWMq15j5YANTCO4+s0TW91Xb9YsnSvMpSlTCucCSwC2SzLcrDA6V5lhMxNlPvrUxNY3/enqqr2ofpRDamxpmme13aTQB2Vqey1OfF6E5iCUrh5nvs1cFobPSkXKPX1oA+P8bXfQtYuHB9lWXbDMLzfyhaURIQ1+vm5QammG5jC1sDlhHIH+ylcbqgsYN/B/QVUNrBrcJrPtaeUHQ/XPRYH6zzdc+fv3V8UaV1dZwVTgQROU65vPwVeGtnBVDSCKzz+fC+B3G1OcDru1gCFMYABDGAAAxjAAAYwgAEMYAADFgOfDWG0oyHANvEAAAAASUVORK5CYII=) no-repeat center right;
-  background-size: 54rpx; */
-  padding: 5rpx 28rpx;
-  border: 1rpx solid #efefef;
-  border-radius: 100rpx;
+  background: url(data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAAAXNSR0IArs4c6QAAAUVJREFUaAXtlTFug0AQRUlowxVsJXeAArmg9YlTGkWuuESkXAE3FKDslxxptbKdkJmNU7yVsGC9/Jn38OKiYGAAAxjAAAYwgAEMYAADGMAABjCAAQxgAAP/1UDXdU9t2269+lOWMq15j5YANTCO4+s0TW91Xb9YsnSvMpSlTCucCSwC2SzLcrDA6V5lhMxNlPvrUxNY3/enqqr2ofpRDamxpmme13aTQB2Vqey1OfF6E5iCUrh5nvs1cFobPSkXKPX1oA+P8bXfQtYuHB9lWXbDMLzfyhaURIQ1+vm5QammG5jC1sDlhHIH+ylcbqgsYN/B/QVUNrBrcJrPtaeUHQ/XPRYH6zzdc+fv3V8UaV1dZwVTgQROU65vPwVeGtnBVDSCKzz+fC+B3G1OcDru1gCFMYABDGAAAxjAAAYwgAEMYAADFgOfDWG0oyHANvEAAAAASUVORK5CYII=) no-repeat center right;
+  background-size: 54rpx;
+  padding: 5rpx 52rpx 5rpx 28rpx;
+  /* border: 1rpx solid #efefef; */
+  /* border-radius: 100rpx; */
 }
 .picker > view {
   padding: 0 10rpx;

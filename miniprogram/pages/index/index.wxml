@@ -1,14 +1,20 @@
 <view class="home">
-  <view class="logo">
+  <view class="logo" style="height: {{navigationBarHeight}}px">
     <image src="/images/logo.jpg" mode="aspectFit"></image>
+    <view>中国人民解放军总医院</view>
   </view>
-  <view class="list" wx:if="{{queryResult && queryResult.length}}">
-    <navigator wx:for="{{queryResult}}" wx:key="{{index}}" url="/pages/detail/detail?id={{item._id}}">
-      <image src="{{item.userInfo.avatarUrl}}"></image>
-      <view>{{item.userInfo.nickName}}</view>
-    </navigator>
+  <view wx:if="{{show}}">
+    <view class="list" wx:if="{{queryResult && queryResult.length}}">
+      <navigator wx:for="{{queryResult}}" wx:key="{{index}}" url="/pages/detail/detail?id={{item._id}}">
+        <image src="{{item.userInfo.avatarUrl}}"></image>
+        <view>{{item.userInfo.nickName}}</view>
+      </navigator>
+    </view>
+    <view class="empty" wx:else>
+      <image src="/images/empty.png"></image>
+      <view>暂无数据</view>
+    </view>
   </view>
-  <view wx:else>暂无数据</view>
   <view class="btm">
     <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="submit">去排班</button>
     <view wx:else class="submit" bindtap="onGetOpenid">去排班</view>

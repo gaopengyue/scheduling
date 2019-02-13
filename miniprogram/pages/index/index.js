@@ -8,7 +8,8 @@ Page({
    */
   data: {
     userInfo: null,
-    queryResult: null
+    queryResult: null,
+    show: false
   },
 
   /**
@@ -30,10 +31,13 @@ Page({
     db.collection('schedules').limit(100).get({
       success: res => {
         this.setData({
-          queryResult: res.data
+          queryResult: res.data,
+          show: true
         })
+        wx.stopPullDownRefresh()
       },
       fail: err => {
+        wx.stopPullDownRefresh()
         wx.showToast({
           icon: 'none',
           title: '查询记录失败'
@@ -96,5 +100,9 @@ Page({
         }
       }
     })
+  },
+  onPullDownRefresh() {
+    wx.vibrateShort()
+    this.onQuery()
   }
 })
